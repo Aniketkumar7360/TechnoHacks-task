@@ -1,0 +1,73 @@
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+      //menu bar for user
+        while(true) {
+            System.out.println("Basic Calculator program ");
+            System.out.println("1. Add two numbers");
+            System.out.println("2. Subtract two number");
+            System.out.println("3. Multiply two numbers");
+            System.out.println("4. Divide two numbers");
+            System.out.println("5. Exit");
+            System.out.println(" please enter your choice");
+            int choice = sc.nextInt();
+         //variable declaration
+           double num1;
+           double num2;
+            double result ;
+  //opeartions of calculator
+            switch (choice) {
+                //addition
+                case 1:
+                    System.out.print("Enter the first number: ");
+                     num1 = sc.nextDouble();
+                    System.out.print("Enter the second number: ");
+                     num2 = sc.nextDouble();
+                    result = num1 + num2;
+                    System.out.println("Result: " + num1 + " + " + num2 + " = " + result);
+                    break;
+                //subtraction
+                    case 2:
+                    System.out.print("Enter the first number: ");
+                     num1 = sc.nextDouble();
+                    System.out.print("Enter the second number: ");
+                     num2 = sc.nextDouble();
+                    result = num1 - num2;
+                    System.out.println("Result: " + num1 + " - " + num2 + " = " + result);
+                    break;
+                //multtiplication
+                    case 3:
+                    System.out.print("Enter the first number: ");
+                     num1 = sc.nextDouble();
+                    System.out.print("Enter the second number: ");
+                    num2 = sc.nextDouble();
+                    result = num1 * num2;
+                    System.out.println("Result: " + num1 + " * " + num2 + " = " + result);
+                    break;
+                //division
+                case 4:
+                    System.out.print("Enter the first number: ");
+                     num1 = sc.nextDouble();
+                    System.out.print("Enter the second number: ");
+                     num2 = sc.nextDouble();
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        System.out.println("Result: " + num1 + " / " + num2 + " = " + result);
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+                    break;
+                    //Exiting from program or no operation case
+                case 5:
+                    System.out.println("exiting the program");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+
+    }
+}
