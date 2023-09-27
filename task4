@@ -1,0 +1,56 @@
+mport java.util.ArrayList;
+import java.util.Scanner;
+
+public class todolist {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Creating array list of string
+        ArrayList<String> todolist = new ArrayList<>();
+
+       // Menu bar for user interface
+        while (true) {
+            System.out.println("--------MENU----------");
+            System.out.println("1.Add new item to list");
+            System.out.println("2.Remove item from list");
+            System.out.println("3 View item of the list");
+            System.out.println("4.Exit");
+            System.out.println("Please enter your choice");
+            int choice = sc.nextInt();
+            switch (choice) {
+              //Adding elements to list
+                case 1:
+                    System.out.print("Enter the item to add: ");
+                    String newItem = sc.next();
+                    todolist.add(newItem);
+                    System.out.println("Item added to the to-do list.");
+                    break;
+               //Removing Elements from List
+                case 2:
+                    System.out.print("Enter the item to remove: ");
+                    String itemToRemove = sc.nextLine();
+                    if (todolist.remove(itemToRemove)) {
+                        System.out.println("Item removed from the to-do list.");
+                    } else {
+                        System.out.println("Item not found in the to-do list.");
+                    }
+                    break;
+
+              // Display List
+                case 3:
+                    System.out.println("\nTo-Do List:");
+                    for (int i = 0; i < todolist.size(); i++) {
+                        System.out.println((i + 1) + ". " + todolist.get(i));
+                    }
+                    break;
+
+               //No Any operation or Exit from program
+                case 4:
+                    System.out.println("Exiting the program.");
+                    sc.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. ");
+            }
+        }
+    }
+}
